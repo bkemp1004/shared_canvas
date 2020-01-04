@@ -12,7 +12,7 @@ function newDraw(mouse){
     fill(0,35,102);
     noStroke();
     ellipse(mouse.x,mouse.y,30,30);
-    stroke(200);
+    stroke(0,35,102);
     strokeWeight(30);
     line(mouse.px,mouse.py,mouse.x,mouse.y);
 }
