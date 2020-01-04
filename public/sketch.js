@@ -9,7 +9,7 @@ function setup(){
 }
 
 function newDraw(mouse){
-    fill(200);
+    fill(0,35,102);
     noStroke();
     ellipse(mouse.x,mouse.y,30,30);
     stroke(200);
