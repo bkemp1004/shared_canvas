@@ -1,9 +1,10 @@
 var socket;
-var data;
+var colorId;
 
 function setup(){
     createCanvas(windowWidth-20,windowHeight-20);
     background(51);
+    colorId = color(random(255),random(255),random(255));
     socket = io.connect("http://167.172.124.109:3000/");
     socket.on('mouse', newDraw);    
 }
@@ -29,7 +30,8 @@ function mouseDragged(){
             x : mouseX,
             y : mouseY,
             px : pmouseX,
-            py : pmouseY
+            py : pmouseY,
+            colorId: colorId
         }
         socket.emit('mouse', mouse);
     }
