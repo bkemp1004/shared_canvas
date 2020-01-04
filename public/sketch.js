@@ -2,7 +2,7 @@ var socket;
 var data;
 
 function setup(){
-    createCanvas(windowWidth-10,windowHeight-10);
+    createCanvas(1600,900);
     background(51);
     socket = io.connect("http://167.172.124.109:3000/");
     socket.on('mouse', newDraw);    
