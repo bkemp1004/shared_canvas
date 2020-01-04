@@ -1,10 +1,9 @@
 var socket;
-var colorId;
 
 function setup(){
     createCanvas(windowWidth-20,windowHeight-20);
     background(51);
-    clientId = random(255);
+    clientId = random(175);
     socket = io.connect("http://167.172.124.109:3000/");
     socket.on('mouse', newDraw);    
 }
