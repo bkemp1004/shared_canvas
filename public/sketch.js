@@ -9,10 +9,10 @@ function setup(){
 }
 
 function newDraw(mouse){
-    fill(0,35,102);
+    fill(125);
     noStroke();
     ellipse(mouse.x,mouse.y,30,30);
-    stroke(0,35,102);
+    stroke(125);
     strokeWeight(30);
     line(mouse.px,mouse.py,mouse.x,mouse.y);
 }
