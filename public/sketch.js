@@ -30,10 +30,10 @@ function mouseDragged(){
     for (i in sliders){
         clientId[i] = sliders[i].value();
     }
-    fill(clientId[0],clientId[1],clientId[3]);
+    fill(color(clientId[0],clientId[1],clientId[3]));
     noStroke();
     ellipse(mouseX,mouseY,30,30);
-    stroke(clientId[0],clientId[1],clientId[3]);
+    stroke(color(clientId[0],clientId[1],clientId[3]));
     strokeWeight(30);
     line(pmouseX,pmouseY,mouseX,mouseY);
     if (mouseIsPressed){
