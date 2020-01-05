@@ -28,9 +28,6 @@ function newDraw(mouse){
 }
 
 function mousePressed(){
-    for (i in sliders){
-        clientId[i] = sliders[i].value();
-    }
     if(mouseY <= height){
         fill(clientId[0],clientId[1],clientId[2]);
         noStroke();
@@ -52,9 +49,6 @@ function mousePressed(){
 }
 
 function mouseDragged(){
-    for (i in sliders){
-        clientId[i] = sliders[i].value();
-    }
     if(mouseY <= height){
         fill(clientId[0],clientId[1],clientId[2]);
         noStroke();
@@ -76,6 +70,9 @@ function mouseDragged(){
 }
 
 function draw(){
+    for (i in sliders){
+        clientId[i] = sliders[i].value();
+    }
     fill(clientId[0],clientId[1],clientId[2])
     rect(0,0,20,10);
 }
