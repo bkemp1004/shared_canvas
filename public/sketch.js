@@ -1,7 +1,7 @@
 var socket;
 
 function setup(){
-    createCanvas(windowWidth-20,windowHeight-20);
+    createCanvas(windowWidth-20,windowHeight-40);
     background(51);
     sliders = [];
     clientId = [random(175),random(175),random(175)];
