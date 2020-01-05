@@ -9,7 +9,7 @@ function setup(){
         sliders[i] = createSlider(0,255,clientId[i],1);
         sliders[i].size((width-30)/3,5);
         if (sliders[i-1]){
-            sliders[i].position(sliders[i-1].x + sliders[i-1].width + 10, height + 10);
+            sliders[i].position(sliders[i-1].x + sliders[i-1].width + 10, height + 15);
         }else{
             sliders[i].position(10,height+15);
         }
