@@ -7,6 +7,7 @@ function setup(){
     clientId = [random(175),random(175),random(175)];
     for (i in clientId){
         sliders[i] = createSlider(0,255,clientId[i],1);
+        sliders[i].size((width-20)/3,5);
         if (sliders[i-1]){
             sliders[i].position(sliders[i-1].x + sliders[i-1].width + 10, height + 10);
         }else{
