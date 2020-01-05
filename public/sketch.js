@@ -34,10 +34,10 @@ function newDraw(mouse){
 }
 
 function mouseDragged(){
-    fill(255);
+    fill(clientId[0],clientId[1],clientId[3]);
     noStroke();
     ellipse(mouseX,mouseY,30,30);
-    stroke(255);
+    stroke(clientId[0],clientId[1],clientId[3]);
     strokeWeight(30);
     line(pmouseX,pmouseY,mouseX,mouseY);
     if (mouseIsPressed){
