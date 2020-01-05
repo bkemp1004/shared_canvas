@@ -49,3 +49,27 @@ function mousePressed(){
         }
     }
 }
+
+function mouseDragged(){
+    for (i in sliders){
+        clientId[i] = sliders[i].value();
+    }
+    if(mouseY <= height){
+        fill(clientId[0],clientId[1],clientId[2]);
+        noStroke();
+        ellipse(mouseX,mouseY,30,30);
+        stroke(clientId[0],clientId[1],clientId[2]);
+        strokeWeight(30);
+        line(pmouseX,pmouseY,mouseX,mouseY);
+        if (mouseIsPressed){
+            mouse = {
+                x : mouseX,
+                y : mouseY,
+                px : pmouseX,
+                py : pmouseY,
+                colorId: clientId
+            }
+            socket.emit('mouse', mouse);
+        }
+    }
+}
