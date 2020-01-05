@@ -18,12 +18,6 @@ function setup(){
     socket.on('mouse', newDraw);    
 }
 
-function updateColor(){
-    for (i in sliders){
-        clientId[i] = sliders[i].value();
-    }
-}
-
 function newDraw(mouse){
     fill(mouse.colorId[0],mouse.colorId[1],mouse.colorId[2]);
     noStroke();
@@ -34,6 +28,9 @@ function newDraw(mouse){
 }
 
 function mouseDragged(){
+    for (i in sliders){
+        clientId[i] = sliders[i].value();
+    }
     fill(clientId[0],clientId[1],clientId[3]);
     noStroke();
     ellipse(mouseX,mouseY,30,30);
