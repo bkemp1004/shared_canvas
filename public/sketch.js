@@ -26,7 +26,7 @@ function newDraw(mouse){
     line(mouse.px,mouse.py,mouse.x,mouse.y);
 }
 
-function mouseIsDown(){
+function mousePressed(){
     for (i in sliders){
         clientId[i] = sliders[i].value();
     }
