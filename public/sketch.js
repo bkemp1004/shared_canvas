@@ -8,13 +8,20 @@ function setup(){
     for (i in clientId){
         sliders[i] = createSlider(0,255,clientId[i],1);
         if (sliders[i-1]){
-            sliders[i].position(sliders[i-1].x + sliders[i-1].width, height + 10);
+            sliders[i].position(sliders[i-1].x + sliders[i-1].width + 10, height + 10);
         }else{
             sliders[i].position(10,height+10);
         }
+        sliders[i].input(updateColor);
     }
     socket = io.connect("http://167.172.124.109:3000/");
     socket.on('mouse', newDraw);    
+}
+
+function updateColor(){
+    for (i in sliders){
+        clientId[i] = sliders[i].value();
+    }
 }
 
 function newDraw(mouse){
