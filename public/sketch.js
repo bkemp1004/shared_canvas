@@ -70,6 +70,7 @@ function mouseDragged(){
 }
 
 function draw(){
+    noStroke
     for (i in sliders){
         clientId[i] = sliders[i].value();
     }
