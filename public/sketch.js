@@ -31,6 +31,7 @@ function mousePressed(){
     for (i in sliders){
         clientId[i] = sliders[i].value();
     }
+    rect(clientId[0],clientId[1],clientId[2]);
     if(mouseY <= height){
         fill(clientId[0],clientId[1],clientId[2]);
         noStroke();
