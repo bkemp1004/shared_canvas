@@ -3,7 +3,16 @@ var socket;
 function setup(){
     createCanvas(windowWidth-20,windowHeight-20);
     background(51);
+    sliders = [];
     clientId = [random(175),random(175),random(175)];
+    for (i in clientId){
+        sliders[i] = createSlider(0,255,clientId[i],1);
+        if (sliders[i-1]){
+            sliders[i].position(sliders[i-1].x + sliders[i-1].width, height + 10);
+        }else{
+            sliders[i].position(10,height+10);
+        }
+    }
     socket = io.connect("http://167.172.124.109:3000/");
     socket.on('mouse', newDraw);    
 }
