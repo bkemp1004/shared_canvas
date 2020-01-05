@@ -12,7 +12,6 @@ function setup(){
         }else{
             sliders[i].position(10,height+10);
         }
-        sliders[i].input(updateColor);
     }
     socket = io.connect("http://167.172.124.109:3000/");
     socket.on('mouse', newDraw);    
