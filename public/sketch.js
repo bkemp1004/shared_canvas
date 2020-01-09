@@ -14,7 +14,7 @@ function setup(){
             sliders[i].position(10,height+15);
         }
     }
-    socket = io.connect("http://167.172.124.109:80/");
+    socket = io.connect("http://167.172.124.109:3000/");
     socket.on('mouse', newDraw);    
 }
 
