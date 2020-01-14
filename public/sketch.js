@@ -78,10 +78,11 @@ function mouseDragged(){
 }
 
 function draw(){
-    noStroke();
+    strokeWeight(10);
     for (i in sliders){
         clientId[i] = sliders[i].value();
     }
-    fill(clientId[0],clientId[1],clientId[2])
+    stroke(clientId[0],clientId[1],clientId[2]);
+
     line(0,3,width,3);
 }
