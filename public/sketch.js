@@ -6,9 +6,8 @@ function setup(){
     background(51);
     sliders = [];
     sketchCanvas = createInput('Canvas');
+    sketchCanvas.size(80,40);   
     sketchCanvas.position(40,0);
-    sketchCanvas.size(80,40);
-    sketchCanvas.style('color', blue);
     clientId = [random(175),random(175),random(175)];
     for (i in clientId){
         sliders[i] = createSlider(0,255,clientId[i],1);
