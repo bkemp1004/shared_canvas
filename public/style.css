@@ -1,4 +1,6 @@
 input{
-    background-color:white;
-    border-style: solid
+    background-color:#333333;
+    border-style: solid;
+    border-color: white;
+    border-radius: 50
 }
