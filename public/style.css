@@ -1,7 +1,7 @@
 input{
-    padding: 5px;
-    background-color:#333333;
+    padding: 10px;
+    background-color:#777777;
     border-style: solid;
     border-color: white;
-    border-radius: 20px 20px 10px 20px
+    border-radius: 20px 20px 5px 20px
 }
