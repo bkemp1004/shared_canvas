@@ -83,5 +83,5 @@ function draw(){
         clientId[i] = sliders[i].value();
     }
     fill(clientId[0],clientId[1],clientId[2])
-    line(0,0,width,0);
+    line(0,3,width,3);
 }
