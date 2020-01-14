@@ -1,9 +1,11 @@
 var socket;
+var sketchCanvas;
 
 function setup(){
     createCanvas(windowWidth-20,windowHeight-40);
     background(51);
     sliders = [];
+    sketchCanvas = createInput('Canvas');
     clientId = [random(175),random(175),random(175)];
     for (i in clientId){
         sliders[i] = createSlider(0,255,clientId[i],1);
@@ -19,12 +21,14 @@ function setup(){
 }
 
 function newDraw(mouse){
-    fill(mouse.colorId[0],mouse.colorId[1],mouse.colorId[2]);
-    noStroke();
-    ellipse(mouse.x,mouse.y,30,30);
-    stroke(mouse.colorId[0],mouse.colorId[1],mouse.colorId[2]);
-    strokeWeight(30);
-    line(mouse.px,mouse.py,mouse.x,mouse.y);
+    if(mouse.sketchId == sketchCanvas.value()){
+        fill(mouse.colorId[0],mouse.colorId[1],mouse.colorId[2]);
+        noStroke();
+        ellipse(mouse.x,mouse.y,30,30);
+        stroke(mouse.colorId[0],mouse.colorId[1],mouse.colorId[2]);
+        strokeWeight(30);
+        line(mouse.px,mouse.py,mouse.x,mouse.y);
+    }
 }
 
 function mousePressed(){
@@ -41,7 +45,8 @@ function mousePressed(){
                 y : mouseY,
                 px : pmouseX,
                 py : pmouseY,
-                colorId: clientId
+                colorId: clientId,
+                sketchId: sketchCanvas.value()
             }
             socket.emit('mouse', mouse);
         }
@@ -62,7 +67,8 @@ function mouseDragged(){
                 y : mouseY,
                 px : pmouseX,
                 py : pmouseY,
-                colorId: clientId
+                colorId: clientId,
+                sketchId: sketchCanvas.value()
             }
             socket.emit('mouse', mouse);
         }
