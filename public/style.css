@@ -4,10 +4,5 @@ input{
     border-style: solid;
     border-color: white;
     border-radius: 20px 20px 5px 20px;
-    color: white;
-}
-
-slider{
-    height:10;
-    width:15
+    color: white
 }
