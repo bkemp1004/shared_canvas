@@ -26,9 +26,9 @@ function newDraw(mouse){
     if(mouse.sketchId == sketchCanvas.value()){
         fill(mouse.colorId[0],mouse.colorId[1],mouse.colorId[2]);
         noStroke();
-        ellipse(mouse.x,mouse.y,map(dist(pmouseX,pmouseY,mouseX,mouseY),0,100,10,60));
+        ellipse(mouse.x,mouse.y,map(dist(px,py,x,y),0,100,10,60));
         stroke(mouse.colorId[0],mouse.colorId[1],mouse.colorId[2]);
-        strokeWeight(map(dist(pmouseX,pmouseY,mouseX,mouseY),0,100,10,60));
+        strokeWeight(map(dist(px,py,x,y),0,100,10,60));
         line(mouse.px,mouse.py,mouse.x,mouse.y);
     }
 }
@@ -37,9 +37,9 @@ function mousePressed(){
     if(mouseY <= height || (mouseX < width - 90 && mouseY < height-50)){
         fill(clientId[0],clientId[1],clientId[2]);
         noStroke();
-        ellipse(mouseX,mouseY,map(dist(pmouseX,pmouseY,mouseX,mouseY),0,100,10,60));
+        ellipse(mouseX,mouseY,map(dist(pmouseX,pmouseY,mouseX,mouseY),0,100,60,10));
         stroke(clientId[0],clientId[1],clientId[2]);
-        strokeWeight(map(dist(pmouseX,pmouseY,mouseX,mouseY),0,100,10,60));
+        strokeWeight(map(dist(pmouseX,pmouseY,mouseX,mouseY),0,100,60,10));
         line(pmouseX,pmouseY,mouseX,mouseY);
         if (mouseIsPressed){
             mouse = {
@@ -59,9 +59,9 @@ function mouseDragged(){
     if(mouseY <= height || (mouseX < width - 90 && mouseY < height-50)){
         fill(clientId[0],clientId[1],clientId[2]);
         noStroke();
-        ellipse(mouseX,mouseY,30,30);
+        ellipse(mouseX,mouseY,map(dist(pmouseX,pmouseY,mouseX,mouseY),0,100,60,10));
         stroke(clientId[0],clientId[1],clientId[2]);
-        strokeWeight(30);
+        strokeWeight(map(dist(pmouseX,pmouseY,mouseX,mouseY),0,100,60,10));
         line(pmouseX,pmouseY,mouseX,mouseY);
         if (mouseIsPressed){
             mouse = {
