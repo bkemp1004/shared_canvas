@@ -34,7 +34,7 @@ function newDraw(mouse){
 }
 
 function mousePressed(){
-    if(mouseY <= height){
+    if(mouseY <= height || (mouseX < width - 90 && mouseY < height-50)){
         fill(clientId[0],clientId[1],clientId[2]);
         noStroke();
         ellipse(mouseX,mouseY,30,30);
@@ -56,7 +56,7 @@ function mousePressed(){
 }
 
 function mouseDragged(){
-    if(mouseY <= height){
+    if(mouseY <= height || (mouseX < width - 90 && mouseY < height-50)){
         fill(clientId[0],clientId[1],clientId[2]);
         noStroke();
         ellipse(mouseX,mouseY,30,30);
