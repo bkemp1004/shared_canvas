@@ -5,7 +5,7 @@ function setup(){
     createCanvas(windowWidth-20,windowHeight-40);
     background(51);
     sliders = [];
-    sketchCanvas = createInput('Canvas');
+    sketchCanvas = createInput('');
     sketchCanvas.size(80,40);   
     sketchCanvas.position(width-sketchCanvas.width,height-sketchCanvas.height);
     clientId = [random(175),random(175),random(175)];
